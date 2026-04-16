@@ -94,7 +94,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
- 
+ <style>
+
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 1s ease;
+  opacity: 1;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  user-select: none;
+}
+.hero h1, .hero p {
+  color: white;
+  text-shadow: 0 0 20px rgba(0,0,0,1);
+  margin: 0;
+  padding: 0;
+}
+.hero h1 {
+  font-size: 80px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 20px;
+  color: #fff;
+}
+
+#main-site {
+  display: none;
+  padding: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 50px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+.fallback-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #f967fb, #53bc28, #6958d5, #83f36e);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  display: none;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>
   <meta name="google-adsense-account" content="ca-pub-1284830427949030">
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284830427949030"
@@ -150,6 +233,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!--
       - #SIDEBAR
     -->
+
+
+
+    <div id="intro">
+  <div class="fallback-bg" id="fallbackBg"></div>
+  <canvas id="canvas"></canvas>
+  <div class="hero">
+    <h1>Welcome to my portfolio</h1>
+    <p>I’m Ram Mijar.</p>
+    <br>
+    <p>BCA Student | Learning Web Development ❤</p>
+  </div>
+</div>
+
 
     <aside class="sidebar" data-sidebar>
 
@@ -257,7 +354,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </a>
         </li>
         <li class="social-item">
-            <a href="https://www.linkedin.com/in/ramijar2020/?originalSubdomain=np" class="social-link">
+            <a href="https://www.linkedin.com/in/rammijar/" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 510 510" style="enable-background:new 0 0 512 512" xml:space="preserve" class="" width="20" height="20">
                     <g>
                         <path d="M459 0H51C22.95 0 0 22.95 0 51v408c0 28.05 22.95 51 51 51h408c28.05 0 51-22.95 51-51V51c0-28.05-22.95-51-51-51zM153 433.5H76.5V204H153v229.5zm-38.25-272.85c-25.5 0-45.9-20.4-45.9-45.9s20.4-45.9 45.9-45.9 45.9 20.4 45.9 45.9-20.4 45.9-45.9 45.9zM433.5 433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25 17.851-38.25 38.25V433.5H204V204h76.5v30.6c12.75-20.4 40.8-35.7 63.75-35.7 48.45 0 89.25 40.8 89.25 89.25V433.5z" fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
@@ -653,9 +750,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <h2 class="h2 article-title">Resume</h2>
 
         </header>
-        <button id="downloadButton">
-         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 640 640" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#00acea" d="M300.586 101.45 285.277 0H60.676C26.856 0 0 27.555 0 61.371V486.09c0 33.816 26.855 60.812 60.676 60.812H273.73L427.223 314.5V148.766zm0 0" opacity="1" data-original="#00acea" class=""></path><path fill="#00efd1" d="m285.277.14 141.528 148.626h-94.211c-26.164 0-47.317-21.153-47.317-47.317zm0 0" opacity="1" data-original="#00efd1" class=""></path><g fill="#083863"><path d="M279.992 318.676H98.527c-7.652 0-13.918 6.265-13.918 13.918 0 7.656 6.266 13.914 13.918 13.914h181.325c7.652 0 13.918-6.258 13.918-13.914 0-7.653-6.122-13.918-13.778-13.918zM98.527 276.93h140.97c7.651 0 13.917-6.262 13.917-13.918 0-7.653-6.266-13.914-13.918-13.914H98.527c-7.652 0-13.918 6.261-13.918 13.914 0 7.656 6.266 13.918 13.918 13.918zM234.066 389.648H98.527c-7.652 0-13.918 6.266-13.918 13.914 0 7.657 6.266 13.918 13.918 13.918h135.54c7.656 0 13.917-6.261 13.917-13.918 0-7.648-6.261-13.914-13.918-13.914zm0 0" fill="#083863" opacity="1" data-original="#083863" class=""></path></g><path fill="#fedb41" d="M426.805 286.813c86.28 12.101 152.656 86.136 152.656 175.753 0 97.97-79.457 177.434-177.426 177.434-67.351 0-126.078-37.574-156-92.96-13.637-25.188-21.43-53.993-21.43-84.61 0-97.97 79.461-177.43 177.43-177.43 8.352.14 16.559.7 24.77 1.813zm0 0" opacity="1" data-original="#fedb41" class=""></path><path fill="#083863" d="m473.285 459.648-57.195 61.645V369.332c0-7.652-6.262-13.918-13.918-13.918-7.652 0-13.914 6.266-13.914 13.918v151.961l-57.613-61.645c-5.29-5.566-14.196-5.988-19.762-.699-5.567 5.29-5.98 14.059-.7 19.625l81.415 87.528c2.64 2.785 6.261 4.453 10.156 4.453 3.894 0 7.512-1.668 10.16-4.453l81.406-87.528c5.29-5.566 5.008-14.472-.558-19.625-5.559-5.289-14.188-4.867-19.477.7zm0 0" opacity="1" data-original="#083863" class=""></path></g></svg> <span class="timeline-text">Download Resume</span>
-        </button>
+        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+          <button id="downloadButton" style="color: hsl(0, 0%, 84%); background: rgba(34, 34, 34, 0.6); border: 1px solid rgba(132, 184, 236, 0.4); padding: 12px 24px; border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 500; text-transform: uppercase; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+           Download Resume
+          </button>
+          
+          <button id="hireMeButton" onclick="window.open('https://www.linkedin.com/in/rammijar/', '_blank')" style="color: hsl(0, 0%, 84%); background: rgba(34, 34, 34, 0.6); border: 1px solid rgba(132, 184, 236, 0.4); padding: 12px 24px; border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 500; text-transform: uppercase; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+           Hire Me
+          </button>
+        </div> 
+       
         
         <script>
         document.getElementById("downloadButton").addEventListener("click", function() {
@@ -794,7 +898,7 @@ password.</p>
 
       <h4 class="h4 timeline-item-title">kalash service</h4>
 
-      <span>jawalakhel , January, 2024 - Present </span>
+      <span>jawalakhel , January, 2024 - 2026 </span>
 
       <p class="timeline-text">
     csr in worldlink isp</p>
@@ -1595,6 +1699,72 @@ password.</p>
 
     </div>
   </main>
+
+
+  <script type="module">
+import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
+
+const canvas = document.getElementById('canvas');
+const fallbackBg = document.getElementById('fallbackBg');
+let app;
+let effectLoaded = false;
+
+// Try to load the TubesCursor effect
+setTimeout(() => {
+  try {
+    app = TubesCursor(canvas, {
+      tubes: {
+        colors: ["#f967fb", "#53bc28", "#6958d5"],
+        lights: {
+          intensity: 200,
+          colors: ["#83f36e", "#fe8a2e", "#ff008a", "#60aed5"]
+        }
+      }
+    });
+    effectLoaded = true;
+    
+    // Initial trigger for desktop
+    setTimeout(() => {
+      if (canvas) {
+        const event = new MouseEvent('mousemove', {
+          clientX: window.innerWidth / 2,
+          clientY: window.innerHeight / 2
+        });
+        canvas.dispatchEvent(event);
+      }
+    }, 200);
+    
+  } catch (error) {
+    console.log("TubesCursor not available, using fallback background");
+    fallbackBg.style.display = 'block';
+  }
+}, 100);
+
+// Show intro for 5 seconds
+setTimeout(() => {
+  const intro = document.getElementById('intro');
+  intro.style.opacity = '0';
+  
+  setTimeout(() => {
+    intro.remove();
+    document.getElementById('main-site').style.display = 'block';
+    
+    // Clean up
+    if (app && typeof app.destroy === 'function') {
+      app.destroy();
+    }
+  }, 1000);
+}, 5000);
+
+// Handle resize
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+</script>
 
  <!--
    chat bot 
